@@ -1,7 +1,8 @@
 ;(function($){
     $.fn.statistic = function(options) {
         var margin = {top: 25, bottom: 30, left: 30, right: 110}, width = 505, height = 220;
-        var color = d3.scale.ordinal().range(["#EB6238", "#f6ad49", "#f8c822", "#f5e56b", "#dccb18"]);
+        //var color = d3.scale.ordinal().range(["#EB6238", "#f6ad49", "#f8c822", "#f5e56b", "#dccb18"]);
+        var color = d3.scale.category10();
         // スケール設定
         var x = d3.scale.linear();
         var y = d3.scale.ordinal();
@@ -65,7 +66,7 @@
                 .attr("class", "lists")
                 .on("click", function (d) {
                     var type = $(this).parents()[1].getAttribute('data-field');
-                    console.log($(this).parents());
+                    //console.log($(this).parents());
                     showList({key: type, value: d.name})
                 });
 
@@ -108,11 +109,7 @@
                         return d.height;
                     },
                     fill: function (d, i) {
-                        if (i <= 4){
                             return color(i)
-                        }else{
-                            return "#d4d6c0";
-                        }
                     },
                     x: function (d) {
                         return d.x - 25
@@ -148,9 +145,7 @@
                     return x(+d.val)
                 })
                 .attr("fill", function (d, i) {
-                    if (i <= 4){return color(i)}else{
-                        return "#d4d6c0";
-                    }
+                    return color(i)
                 })
                 .attr({"stroke-width": 2, "stroke": "#ffffff", "cursor": "pointer"})
                 .attr("class", function (d, i) {
