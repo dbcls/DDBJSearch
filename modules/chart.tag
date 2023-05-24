@@ -7,10 +7,10 @@
 
     <div class="row trends">
         <div class="box tob" id="organism_ranking" data-field="organism_name" data-target="bioproject">
-            <h3>Organism Name</h3>
+            <h3>BioProject OrganismName</h3>
         </div>
         <div class="box" id="project_datatype_ranking" data-field="project_datatype" data-target="sra">
-            <h3>Project Datatype</h3>
+            <h3>BioProject DataType</h3>
         </div>
 
     </div>
@@ -23,7 +23,7 @@
             }
         });
 
-        var target_url = conf.api_update_url;
+        var target_url = "http://sra-api-dev.bhx.jp/api";
         var self = this;
         function get_data() {
             return $.ajax({

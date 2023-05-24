@@ -13,7 +13,8 @@
         var t = options.target;
         var tdb = options.db;
         // データ読み込み
-        var base_url = "http://52.193.211.138/api/";
+        var base_url = api_base_url + "/";
+        //var base_url = "http://52.193.211.138/api/";
         var conf = {statistic:{params: "sra/type/"},
             organism: {params: "bioproject/organism_name/"},
             study_type: {params: "sra/study_type/"},
@@ -66,7 +67,6 @@
                 .attr("class", "lists")
                 .on("click", function (d) {
                     var type = $(this).parents()[1].getAttribute('data-field');
-                    //console.log($(this).parents());
                     showList({key: type, value: d.name})
                 });
 
@@ -87,7 +87,7 @@
                     } else {return 257}
                 })
                 .text(function (d, i) {
-                        return d.name
+                    return d.name
                 })
                 .attr("fill", "#444444")
                 //背景の矩形のプロパティを取得
@@ -109,7 +109,7 @@
                         return d.height;
                     },
                     fill: function (d, i) {
-                            return color(i)
+                        return color(i)
                     },
                     x: function (d) {
                         return d.x - 25
@@ -208,11 +208,10 @@
         //
         function showList(q) {
             if (q != "total") {
-                //console.log(window.location.pathname);
                 // key: valueを渡す
                 var k = q["key"];
                 var v = q["value"];
-                window.location.href = "result.html?" + k + "=" + v + "&target_db=" + tdb;
+                window.location.href = "result.html?" + "target_db=" + tdb + "&" + k + "=" + v;
             }
         }
 

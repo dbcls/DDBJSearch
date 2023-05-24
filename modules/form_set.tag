@@ -12,12 +12,20 @@
 
             <div id="sra_form" show='{visible.sra}'>
 
-                <div class="show_more"><a href="#" data-target="sra_advanced" data-state="hide" onclick={adv_show}>Advanced search</a></div>
+                <div class="show_more">
+                    <a href="#" data-target="sra_advanced" data-state="hide" onclick={adv_show}>Advanced search</a>
+                </div>
 
                 <div  id="sra_advanced" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <h3>Study</h3>
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="study_title">Title :</label></span>
                         <input type="text" class="input-box1" id="study_title" name="study_title" data-type="study" size="50" value="" onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="study_type" class="left-margin">Abstract :</label></span>
+                        <input type="text" class="input-box1" name="abstract" id="abstract" data-type="study" size="50" onkeydown="{enter_go}" />
                     </div>
 
                     <div>
@@ -27,7 +35,23 @@
 
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="study_type" class="left-margin">StudyType :</label></span>
-                        <input type="text" class="input-box1" name="study_type" id="study_type" data-type="study" onkeydown="{enter_go}" />
+                        <input type="text" class="input-box1" name="study_type" id="study_type" data-type="study" size="50" onkeydown="{enter_go}" />
+                    </div>
+
+                    <h3>Experiment</h3>
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="title">Experiment Title :</label></span>
+                        <input type="text" class="input-box1" name="title" id="title" data-type="experiment" size="50" value=""  onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="center_name">Center Name :</label></span>
+                        <input type="text" class="input-box1" name="center_name" id="center_name" data-type="experiment" size="50" value=""  onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="design_description">Design Desctiption :</label></span>
+                        <input type="text" class="input-box1" name="design_description" id="design_description" data-type="experiment" size="50" value=""  onkeydown="{enter_go}"/>
                     </div>
 
                     <div>
@@ -60,6 +84,8 @@
                         <input type="text" class="input-box1" id="instrument_model" name="instrument_model" data-type="experiment" size="50" value="" onkeydown="{enter_go}"/>
                     </div>
 
+
+
                 </div>
             </div>
 
@@ -68,13 +94,35 @@
                 <div  id="bp_advanced" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="bp_title">Title :</label></span>
-                        <input type="text" class="input-box1" id="bp_title" name="title" size="50" value="" onkeydown="{enter_go}"/>
+                        <input type="text" class="input-box1" id="bp_title" name="bp_title" size="50" value="" onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="description">Description :</label></span>
+                        <input type="text" class="input-box1" id="description" name="description" size="50" value="" onkeydown="{enter_go}"/>
                     </div>
 
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="publication_id">Publication ID :</label></span>
                         <input type="text" class="input-box1" name="publication_id" id="publication_id" size="50" value="" onkeydown="{enter_go}"/>
                     </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="organism_name">Organism Name:</label></span>
+                        <input type="text" class="input-box1" name="organism_name" id="organism_name" size="50" value="" onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="project_datatype">DataType:</label></span>
+                        <input type="text" class="input-box1" name="project_datatype" id="project_datatype" size="50" value="" onkeydown="{enter_go}"/>
+                    </div>
+
+                    <div>
+                        <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="external_db">ExternalLink DB:</label></span>
+                        <input type="text" class="input-box1" name="external_db" id="external_db" size="50" value="" onkeydown="{enter_go}"/>
+                    </div>
+
+
                 </div>
 
 
@@ -93,7 +141,7 @@
                 <div  id="bs_advanced" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="bs_title">Title :</label></span>
-                        <input type="text" class="input-box1" id="bs_title" name="title" size="50" value="" onkeydown="{enter_go}"/>
+                        <input type="text" class="input-box1" id="bs_title" name="bs_title" size="50" value="" onkeydown="{enter_go}"/>
                     </div>
                     <div>
                         <span class="col_name"><i class="fa fa-search" aria-hidden="true"></i> <label for="package">Package :</label></span>
@@ -105,30 +153,24 @@
             <div>
                 <label for="view_count">Show
                     <select id="view_count" class="select-box1" name="rows">
-                        <option value="20">20</option>
+                        <option value="25">25</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
                     </select>
                      records
                 </label>
 
-                <label show='{visible.sra}' for="sra_sort_key">Sort by
+                <label for="sra_sort_key">Sort by
                     <select id="sra_sort_key" class="select-box1" name="sort">
-                        <option value="uid">ACCESSION</option>
-
+                        <option value="Updated" selected>Updated</option>
+                        <option value="Submitted">Submitted</option>
                     </select>
                 </label>
 
-                <label show='{visible.bioproject}' for="bp_sort_key">Sort by
-                    <select id="bp_sort_key" class="select-box1" name="sort">
-                        <option value="submitted">SUBMITTED</option>
-                        <option value="uid">ACCESSION</option>
-                    </select>
-                </label>
-
-                <label show='{visible.biosample}' for="bs_sort_key">Sort by
-                    <select id="bs_sort_key" class="select-box1" name="sort">
-                        <option value="uid">ACCESSION</option>
+                <label for="sra_order">Order
+                    <select id="sra_order" class="select-box1" name="order">
+                        <option value="desc" selected>DESC</option>
+                        <option value="asc">ASC</option>
                     </select>
                 </label>
 
@@ -146,7 +188,9 @@
         var self = this;
         var args = location.search;
         var props = args.slice(1).split('&');
-        var target_db = props[0].slice(10);
+        //var target_db = props[0].slice(10);
+        var target_db = props[0].split('=')[1];
+
         var focused = target_db ? target_db : "sra";
 
         $("#header-menu li.target").click(function(){
@@ -165,14 +209,16 @@
             var forms = document.getElementById('queryform').elements;
             var vals = [],acc;
 
-            // nameとvalueをformをk:vにパースしarrayに追加する
+            // formをk:vにパースしarray valsに追加する
             $.each(forms, function (i, x) {
                 var k = x.name;
                 var v = x.value;
+                //var types = x.dataset.type;
 
+                // valueが空で無いformのオブジェクトを取得する
                 if (["", "Search", "Clear"].indexOf(v) == -1) {
                     var obj = [k, v];
-                    // accessionが入力された場合のみaccにも値を入れる
+                    // accessionが入力された場合のみaccに値を入れる
                     if (obj[0] === "uid"){
                         acc = obj;
                     }
@@ -189,23 +235,26 @@
             });
             var t = types.filter(function(s){
                 if(s != undefined) {
-                    q.push("type=" + s)
+                    q.push("data_type=" + s)
                 }
             });
+
+            // Accession検索の場合UIDでヒットするようであれば詳細を表示する!!
             if(acc){
-                fetch("http://52.193.211.138/api/" + focused + "?uid=" + acc[1])
+                url = conf.api_base;
+                // Elasticsearch _countから件数を取得する
+                // 検索結果の_idを詳細画面に渡す必要がある
+                fetch(url + "/count/" + acc[1])
                     .then(function (d) {
                         return d.json()
                     })
                     .then(function (jsn) {
-                        if (jsn["numFound"] > 0){
+                        if (jsn["count"] == 1){
                             window.location.href = "details.html?db=" + focused + "&accession=" + acc[1]
                         }else{
-                            // 必ず0件を取得するquery
-                            window.location.href = "result.html?target_db=" + focused + "&uid=" + acc[1]
+                            window.location.href = "result.html?target_db=" + focused + "&term=" + acc[1]
                         }
                     });
-
             }else{
                 var qs = q.join("&");
                 window.location.href = "result.html?" + "target_db=" + focused + "&" + qs;
@@ -246,6 +295,5 @@
             self.update();
 
         });
-
     </script>
 </form_set>

@@ -1,4 +1,5 @@
 <header>
+    
     <div id="header-link" class="navbar-inverse nav-upper">
         <div class="container-fluid content">
             <ul class="nav navbar-upper">
@@ -12,16 +13,19 @@
         <div class="content">
             <!-- Header section -->
             <div class="box box1">
+
                 <h1>
                     <a href="./index.html">
                         <img src="images/ddbj_logo.png" class="logo" alt="DRA Search"/>
-                        <span class="title">DDBJ Search <i class="fa fa-angle-right" aria-hidden="true"></i> {fed}</span>
+                        <span class="title">DBCLS SRA <i class="fa fa-angle-right" aria-hidden="true"></i> {fed}</span>
                     </a>
                 </h1>
             </div>
 
             <div class="box box3">
                 <ul id="target_dbs" onclick={onFocus}>
+                    <li class="target" data-target="taxonomy">Taxonomy</li>
+                    <li class="target" data-target="publication">Publication</li>
                     <li class="target" data-target="biosample">BioSample</li>
                     <li class="target" data-target="bioproject">BioProject</li>
                     <li class="target focused" data-target="sra">SRA</li>
@@ -37,7 +41,7 @@
         };
         // ターゲットのdb名を取得し、heaaderの情報に埋め込む
         var self = this;
-        self.fed = "sra";
+        self.fed = "SRA";
         var args = location.search;
         var props = args.slice(1).split('&');
         var target_db = props[0].split('=');
